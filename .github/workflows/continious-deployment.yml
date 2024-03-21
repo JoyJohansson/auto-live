@@ -1,4 +1,4 @@
-name: Continious-deployment
+name: Continuous-Deployment
 
 # Trigger which git action (push, pull_request)
 # in which branch(es) should start the jobs...
@@ -12,13 +12,11 @@ on:
 jobs:
   # build, the name of the job, a server to create and auto configure
   build:
-    name: Publish a main branch to our web server
+    name: Publish the main branch to our web server
     runs-on: ubuntu-22.04
     steps:
     - name: checkout the main branch
-    with:
-    - name: copy file via scp -secure copy
-    - uses: actions/checkout@v4
+      uses: actions/checkout@v4
       with:
         ref: main
     - name: copy file via scp - secure copy
